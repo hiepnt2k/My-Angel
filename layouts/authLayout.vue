@@ -1,8 +1,8 @@
 <template>
-  <div class="flex items-center justify-center h-full p-[5%]">
+  <div class="flex items-center justify-center w-full h-screen p-[5%]">
     <div v-if="!isMobile" class="w-1/2">
       <img
-        class="w-full"
+        class="w-full h-full"
         src="https://tecdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
         alt=""
         srcset=""
