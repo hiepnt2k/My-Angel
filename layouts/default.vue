@@ -1,17 +1,10 @@
 <template>
-  <LoginForm />
+  <div></div>
 </template>
 
 <script>
-import LoginForm from "~/components/login/LoginForm.vue";
 export default {
-  name: "Login",
-
-  layout: "authLayout",
-
-  components: {
-    LoginForm,
-  },
+  name: "Default",
 
   data() {
     return {};
