@@ -284,14 +284,7 @@
             class="flex flex-col flex-grow border-4 border-gray-400 border-dashed bg-white rounded mt-4"
           ></div>
         </div>
-        <footer class="footer px-4 py-6">
-          <div class="footer-content">
-            <p class="text-sm text-gray-600 text-center">
-              © Brandname 2020. All rights reserved.
-              <a href="https://twitter.com/iaminos">by iAmine</a>
-            </p>
-          </div>
-        </footer>
+        <Footer />
       </main>
     </div>
   </div>
@@ -299,11 +292,14 @@
 
 <script>
 import Header from "~/components/common/Header.vue";
+import Footer from "~/components/common/Footer.vue";
+
 export default {
   name: "Default",
 
   components: {
     Header,
+    Footer,
   },
 
   data() {
