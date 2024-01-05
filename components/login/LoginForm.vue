@@ -1,5 +1,7 @@
 <template>
-  <div class="flex min-h-full flex-col justify-center px-6 py-6 lg:px-8">
+  <div
+    class="flex min-h-full flex-col justify-center px-6 py-6 lg:px-8 shadow-inner"
+  >
     <div class="sm:mx-auto sm:w-full sm:max-w-sm">
       <img
         class="mx-auto h-10 w-auto"
@@ -28,7 +30,7 @@
               name="email"
               type="email"
               placeholder="example@gmail.com"
-              class="block w-full h-10 rounded-md border-0 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
+              class="block w-full h-12 items-center rounded-md border-0 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
             />
           </div>
         </div>
@@ -55,7 +57,7 @@
               name="password"
               type="password"
               placeholder="123456789aA@"
-              class="block w-full h-10 rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
+              class="block w-full h-12 items-center rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
             />
           </div>
         </div>
@@ -63,7 +65,7 @@
         <div>
           <button
             type="submit"
-            class="flex w-full h-10 justify-center rounded-md bg-blue-600/100 px-3 py-2 text-center text-base font-semibold leading-6 text-white shadow-sm hover:bg-blue-600/75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+            class="flex w-full h-12 justify-center items-center rounded-md bg-blue-600/100 px-3 py-2 text-center text-base font-semibold leading-6 text-white shadow-sm hover:bg-blue-600/75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
           >
             Sign in
           </button>
@@ -79,7 +81,7 @@
         </div>
         <div class="flex justify-between">
           <div
-            class="w-[47%] border rounded-lg h-10 flex items-center justify-center font-semibold cursor-pointer hover:text-slate-500"
+            class="w-[47%] border rounded-lg h-12 flex items-center justify-center font-semibold cursor-pointer hover:text-slate-500"
           >
             <img
               class="h-5 mr-1"
@@ -90,7 +92,7 @@
             <span>Google</span>
           </div>
           <div
-            class="w-[47%] border rounded-lg h-10 flex items-center justify-center font-semibold cursor-pointer hover:text-slate-500"
+            class="w-[47%] border rounded-lg h-12 flex items-center justify-center font-semibold cursor-pointer hover:text-slate-500"
           >
             <img
               class="h-5 mr-1"
