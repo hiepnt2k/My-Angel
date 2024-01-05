@@ -9,13 +9,7 @@ module.exports = {
     "./error.vue",
   ],
   theme: {
-    extend: {
-      screens: {
-        mobile: "0px",
-        laptop: "1024px",
-        pc: "1280px",
-      },
-    },
+    extend: {},
   },
   plugins: [],
 };
