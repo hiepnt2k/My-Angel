@@ -1,3 +1,5 @@
+import { getField, updateField } from "vuex-map-fields";
+
 const INIT_STATE = {
   email: "",
   password: "",
@@ -15,6 +17,7 @@ export const actions = {
 };
 
 export const mutations = {
+  updateField,
   RESET_STATE(state) {
     const initState = JSON.parse(JSON.stringify(INIT_STATE));
     for (let item of Object.keys(initState)) {
@@ -23,4 +26,6 @@ export const mutations = {
   },
 };
 
-export const getters = {};
+export const getters = {
+  getField,
+};

@@ -170,6 +170,7 @@ import { required } from "vuelidate/lib/validators";
 import { mustEmailFormat } from "~/mixins/ruleValidator";
 import common from "~/mixins/common";
 import { emailShema, passwordShema } from "~/mixins/validateShema";
+import { mapFields } from "vuex-map-fields";
 
 export default {
   name: "LoginForm",
@@ -182,8 +183,8 @@ export default {
 
   data() {
     return {
-      email: "",
-      password: "",
+      // email: "",
+      // password: "",
     };
   },
 
@@ -202,6 +203,10 @@ export default {
   mounted() {},
 
   computed: {
+    ...mapFields("auth", {
+      email: "email",
+      password: "password",
+    }),
     isEnableBtnSubmit() {
       return (
         this.email &&
