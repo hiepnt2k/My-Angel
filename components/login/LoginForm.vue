@@ -26,7 +26,7 @@
           <div class="mt-2">
             <Input
               :field="'email'"
-              :type="'email'"
+              :type="'text'"
               :placeholder="'example@gmail.com'"
               :value="email"
               :validation="$v.email"
