@@ -24,26 +24,15 @@
             >Email
           </label>
           <div class="mt-2">
-            <input
-              v-model="email"
-              id="email"
-              name="email"
-              type="email"
-              placeholder="example@gmail.com"
-              class="outline-none block w-full h-12 items-center rounded-md border-0 p-2 text-gray-900 shadow-sm ring-2 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
-              :class="[
-                $v.email.$error &&
-                  'bg-red-100 focus:ring-red-400 ring-red-400 ',
-                $v.email.$dirty &&
-                  !$v.email.$error &&
-                  'bg-cyan-100 focus:ring-cyan-400 ring-cyan-400',
-              ]"
-              @blur="handleBlurEmail"
-              @input="handleInputEmail"
+            <Input
+              :field="'email'"
+              :type="'email'"
+              :placeholder="'example@gmail.com'"
+              :value="email"
+              :validation="$v.email"
+              :errorMsg="validationEmail().msg"
+              @handleInput="handleInputEmail"
             />
-          </div>
-          <div class="wiggle text-red-400 font-semibold h-0">
-            <span>{{ validationEmail().msg }}</span>
           </div>
         </div>
 
@@ -63,26 +52,15 @@
             </div>
           </div>
           <div class="mt-2">
-            <input
-              v-model="password"
-              id="password"
-              name="password"
-              type="password"
-              placeholder="123456789aA@"
-              class="outline-none block w-full h-12 items-center rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-2 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
-              :class="[
-                $v.password.$error &&
-                  'bg-red-100 focus:ring-red-400 ring-red-400',
-                $v.password.$dirty &&
-                  !$v.password.$error &&
-                  'bg-cyan-100 focus:ring-cyan-400 ring-cyan-400',
-              ]"
-              @blur="handleBlurPassword"
-              @input="handleInputPassword"
+            <Input
+              :field="'password'"
+              :type="'password'"
+              :placeholder="'123456789aA@'"
+              :value="password"
+              :validation="$v.password"
+              :errorMsg="validationPassword().msg"
+              @handleInput="handleInputPassword"
             />
-          </div>
-          <div class="text-red-400 font-semibold h-0">
-            <span>{{ validationPassword().msg }}</span>
           </div>
         </div>
 
@@ -176,6 +154,7 @@
         <div class="text-center">
           <span class="text-base">Already have an account? </span>
           <span
+            @click="goToSignUp"
             class="text-lg font-semibold text-blue-600 cursor-pointer hover:text-blue-400"
             >Sign Up</span
           >
@@ -186,6 +165,7 @@
 </template>
 
 <script>
+import Input from "~/components/common/Input.vue";
 import { required } from "vuelidate/lib/validators";
 import { mustEmailFormat } from "~/mixins/ruleValidator";
 import common from "~/mixins/common";
@@ -195,6 +175,10 @@ export default {
   name: "LoginForm",
 
   mixins: [common],
+
+  components: {
+    Input,
+  },
 
   data() {
     return {
@@ -231,6 +215,9 @@ export default {
   },
 
   methods: {
+    goToSignUp() {
+      this.$router.push("/signup");
+    },
     handleSumbit() {
       this.$router.push("/");
     },
@@ -240,17 +227,13 @@ export default {
     validationEmail() {
       return this.getFieldError(this.$v, "email", emailShema);
     },
-    handleInputPassword() {
+    handleInputPassword(value) {
+      this.password = value;
       this.$v.password.$reset();
     },
-    handleBlurPassword() {
-      this.$v.password.$touch();
-    },
-    handleInputEmail() {
+    handleInputEmail(value) {
+      this.email = value;
       this.$v.email.$reset();
-    },
-    handleBlurEmail() {
-      this.$v.email.$touch();
     },
   },
 };

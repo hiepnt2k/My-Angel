@@ -1,6 +1,7 @@
 const INIT_STATE = {
   email: "",
   password: "",
+  loggedIn: false,
 };
 
 export const state = () => {

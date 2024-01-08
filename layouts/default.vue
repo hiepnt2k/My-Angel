@@ -28,8 +28,6 @@ export default {
     SideBar,
   },
 
-  middleware: "authenticated",
-
   data() {
     return {};
   },
