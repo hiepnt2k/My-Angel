@@ -15,3 +15,14 @@ export const passwordShema = [
     msg: "Password is required",
   },
 ];
+
+export const confirmPasswordShema = [
+  {
+    key: "required",
+    msg: "Confirm password is required",
+  },
+  {
+    key: "match",
+    msg: "Confirm password must match password",
+  },
+];

@@ -182,10 +182,7 @@ export default {
   },
 
   data() {
-    return {
-      // email: "",
-      // password: "",
-    };
+    return {};
   },
 
   validations() {
@@ -224,7 +221,7 @@ export default {
       this.$router.push("/signup");
     },
     handleSumbit() {
-      this.$router.push("/");
+      this.$router.push("/dashboard");
     },
     validationPassword() {
       return this.getFieldError(this.$v, "password", passwordShema);
@@ -234,12 +231,14 @@ export default {
     },
     handleInputPassword(value) {
       this.password = value;
-      this.$v.password.$reset();
     },
     handleInputEmail(value) {
       this.email = value;
-      this.$v.email.$reset();
     },
+  },
+
+  destroyed() {
+    this.$store.commit("auth/RESET_STATE");
   },
 };
 </script>

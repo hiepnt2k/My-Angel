@@ -1,4 +1,4 @@
-export const persistStore = ["auth"];
+export const persistStore = ["auth", "signup"];
 
 export const persistReducer = (state) => ({
   ...persistStore.reduce(
