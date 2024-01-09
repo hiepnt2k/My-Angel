@@ -6,6 +6,8 @@
 export default {
   name: "SignUpStep2",
 
+  layout: "authLayout",
+
   data() {
     return {};
   },

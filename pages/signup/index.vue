@@ -22,6 +22,7 @@
             for="email"
             class="block text-base font-medium leading-6 text-gray-900"
             >Email
+            <span class="text-red-600">*</span>
           </label>
           <div class="mt-2">
             <Input
@@ -41,8 +42,9 @@
             <label
               for="password"
               class="block text-base font-medium leading-6 text-gray-900"
-              >Password</label
-            >
+              >Password
+              <span class="text-red-600">*</span>
+            </label>
           </div>
           <div class="mt-2">
             <Input
@@ -62,8 +64,9 @@
             <label
               for="password"
               class="block text-base font-medium leading-6 text-gray-900"
-              >Confirm Password</label
-            >
+              >Confirm Password
+              <span class="text-red-600">*</span>
+            </label>
           </div>
           <div class="mt-2">
             <Input
@@ -166,7 +169,9 @@ export default {
   },
 
   methods: {
-    handleSumbit() {},
+    handleSumbit() {
+      this.$router.push("/signup/step2");
+    },
     handleInputConfirmPassword(value) {
       this.confirmPassword = value;
     },
@@ -189,10 +194,6 @@ export default {
     validationEmail() {
       return this.getFieldError(this.$v, "email", emailShema);
     },
-  },
-
-  destroyed() {
-    this.$store.commit("signup/RESET_STATE");
   },
 };
 </script>

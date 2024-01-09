@@ -9,7 +9,7 @@ const INIT_STATE = {
     lastName: "",
     gender: "",
     dob: "",
-    address: "",
+    city: "",
   },
 };
 

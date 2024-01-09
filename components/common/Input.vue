@@ -18,7 +18,9 @@
       @input="handleInput($event.target.value)"
     />
     <div class="wiggle text-red-400 font-semibold h-0">
-      <span>{{ errorMsg }}</span>
+      <transition name="fade">
+        <div v-if="errorMsg">{{ errorMsg }}</div>
+      </transition>
     </div>
   </div>
 </template>
@@ -80,4 +82,14 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.4s, transform 0.4s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+</style>
