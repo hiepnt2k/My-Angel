@@ -7,7 +7,7 @@ const INIT_STATE = {
     confirmPassword: "",
     firstName: "",
     lastName: "",
-    gender: "",
+    gender: 0,
     dob: "",
     city: "",
   },

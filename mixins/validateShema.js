@@ -26,3 +26,17 @@ export const confirmPasswordShema = [
     msg: "Confirm password must match password",
   },
 ];
+
+export const firstNameShema = [
+  {
+    key: "required",
+    msg: "First name is required",
+  },
+];
+
+export const lastNameShema = [
+  {
+    key: "required",
+    msg: "Last name is required",
+  },
+];
