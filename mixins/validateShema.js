@@ -40,3 +40,10 @@ export const lastNameShema = [
     msg: "Last name is required",
   },
 ];
+
+export const cityShema = [
+  {
+    key: "required",
+    msg: "City is required",
+  },
+];

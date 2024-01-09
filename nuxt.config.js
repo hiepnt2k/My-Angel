@@ -29,6 +29,7 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: "~/plugins/vuelidate.js", mode: "client" },
+    "~/plugins/click-out-side.js",
     { src: "~/plugins/mixin.js", mode: "client" },
     { src: "~/plugins/vuex-persist.js", ssr: false },
   ],
