@@ -195,6 +195,12 @@ export default {
       return this.getFieldError(this.$v, "email", emailShema);
     },
   },
+
+  beforeDestroy() {
+    if (!this.$route.path.includes("/signup")) {
+      this.$store.commit("signup/RESET_STATE");
+    }
+  },
 };
 </script>
 

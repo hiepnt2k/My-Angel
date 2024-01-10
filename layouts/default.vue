@@ -11,13 +11,16 @@
         <Footer />
       </main>
     </div>
+    <Loading v-if="loadingGlobal" />
   </div>
 </template>
 
 <script>
+import { mapFields } from "vuex-map-fields";
 import Header from "~/components/common/Header.vue";
 import Footer from "~/components/common/Footer.vue";
 import SideBar from "~/components/common/SideBar.vue";
+import Loading from "~/components/common/Loading.vue";
 
 export default {
   name: "Default",
@@ -26,6 +29,13 @@ export default {
     Header,
     Footer,
     SideBar,
+    Loading,
+  },
+
+  computed: {
+    ...mapFields({
+      loadingGlobal: "loadingGlobal",
+    }),
   },
 
   data() {

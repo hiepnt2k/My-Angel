@@ -232,14 +232,28 @@ export default {
       city: "signupForm.city",
     }),
     isEnableBtnSubmit() {
-      return true;
+      return (
+        this.firstName &&
+        this.$v.firstName.$dirty &&
+        !this.$v.firstName.$error &&
+        this.lastName &&
+        this.$v.lastName.$dirty &&
+        !this.$v.lastName.$error &&
+        this.city &&
+        this.$v.city.$dirty &&
+        !this.$v.city.$error &&
+        this.gender &&
+        this.dob
+      );
     },
   },
 
   mounted() {},
 
   methods: {
-    handleSumbit() {},
+    handleSumbit() {
+      this.$router.push("/signup/check");
+    },
     handleInputCity(value) {
       this.city = value;
     },
@@ -268,6 +282,12 @@ export default {
     validationFirstName() {
       return this.getFieldError(this.$v, "firstName", firstNameShema);
     },
+  },
+
+  beforeDestroy() {
+    if (!this.$route.path.includes("/signup")) {
+      this.$store.commit("signup/RESET_STATE");
+    }
   },
 };
 </script>
