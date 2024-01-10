@@ -11,15 +11,29 @@
     <div :class="!isMobile ? 'w-1/2' : 'w-full'">
       <Nuxt />
     </div>
+    <Loading v-if="loadingGlobal" />
   </div>
 </template>
 
 <script>
+import { mapFields } from "vuex-map-fields";
+import Loading from "~/components/common/Loading.vue";
+
 export default {
   name: "AuthLayout",
 
+  components: {
+    Loading,
+  },
+
   data() {
     return {};
+  },
+
+  computed: {
+    ...mapFields({
+      loadingGlobal: "loadingGlobal",
+    }),
   },
 
   mounted() {},
