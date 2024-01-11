@@ -1,11 +1,13 @@
 <template>
   <div>
     <!-- component -->
-    <div class="flex flex-row min-h-screen bg-gray-100 text-gray-800">
+    <div class="w-full flex flex-row min-h-screen bg-gray-100">
       <SideBar />
-      <main
-        class="main flex flex-col flex-grow -ml-64 md:ml-0 transition-all duration-150 ease-in"
-      >
+      <!--
+        animation: 
+         md:ml-0 transition-all duration-150 ease-in
+      -->
+      <main class="main flex flex-col flex-grow">
         <Header />
         <Nuxt />
         <Footer />
