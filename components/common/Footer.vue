@@ -3,7 +3,7 @@
     <div class="footer-content">
       <p class="text-sm text-gray-600 text-center">
         © {{ new Date().getFullYear() }}. All rights reserved.
-        <a href="https://twitter.com/iaminos">by HiepNT2k</a>
+        <a>by HiepNT2k</a>
       </p>
     </div>
   </footer>

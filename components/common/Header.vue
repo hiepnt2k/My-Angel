@@ -29,7 +29,6 @@
         </div>
         <div class="flex md:hidden">
           <a
-            href="#"
             class="flex items-center justify-center h-10 w-10 border-transparent"
           >
             <svg

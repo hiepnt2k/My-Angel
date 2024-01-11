@@ -44,9 +44,7 @@
               >Password</label
             >
             <div class="text-sm">
-              <a
-                href="#"
-                class="font-semibold text-blue-600/100 hover:text-blue-600/75"
+              <a class="font-semibold text-blue-600/100 hover:text-blue-600/75"
                 >Forgot password?</a
               >
             </div>
