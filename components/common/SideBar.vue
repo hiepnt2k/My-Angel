@@ -5,7 +5,7 @@
   -->
   <aside
     class="sidebar bg-blue-600"
-    :class="isToggleSideBar ? 'w-fit ' : 'w-64'"
+    :class="isToggleSideBar ? 'w-fit' : 'w-64'"
   >
     <div
       class="w-full sidebar-header flex items-center justify-center py-6 cursor-pointer"
@@ -122,4 +122,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped></style>
