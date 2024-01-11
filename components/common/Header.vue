@@ -1,7 +1,7 @@
 <template>
   <header class="header bg-white shadow py-4 px-4">
     <div class="header-content flex items-center flex-row">
-      <form action="#">
+      <form>
         <div class="hidden md:flex relative">
           <div
             class="inline-flex items-center justify-center absolute left-0 top-0 h-full w-10 text-gray-400"

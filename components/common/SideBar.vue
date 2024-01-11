@@ -21,12 +21,17 @@
     </div>
     <div class="sidebar-content px-4 py-6">
       <ul class="flex flex-col w-full">
-        <li class="my-px cursor-pointer">
+        <li class="my-px cursor-pointer" @click="handleGoToPage('/')">
           <a
-            class="flex flex-row items-center h-10 px-3 rounded-lg text-black bg-gray-100"
+            class="flex flex-row items-center h-10 px-3 rounded-lg hover:bg-gray-100 hover:text-gray-700 hover:font-semibold"
+            :class="
+              $route.fullPath === '/'
+                ? 'bg-gray-100 font-semibold text-gray-700'
+                : 'text-gray-300'
+            "
           >
             <span class="material-symbols-outlined"> home </span>
-            <span class="ml-3 font-semibold">Dashboard</span>
+            <span class="ml-3">Dashboard</span>
           </a>
         </li>
 
@@ -35,24 +40,34 @@
             >Account</span
           >
         </li>
-        <li class="my-px cursor-pointer">
+        <li class="my-px cursor-pointer" @click="handleGoToPage('/profile')">
           <a
-            class="flex flex-row items-center h-10 px-3 rounded-lg text-gray-300 hover:bg-gray-100 hover:text-gray-700"
+            class="flex flex-row items-center h-10 px-3 rounded-lg hover:bg-gray-100 hover:text-gray-700 hover:font-semibold"
+            :class="
+              $route.fullPath.includes('/profile')
+                ? 'bg-gray-100 font-semibold text-gray-700'
+                : 'text-gray-300'
+            "
           >
             <span class="material-symbols-outlined"> person </span>
             <span class="ml-3">Profile</span>
           </a>
         </li>
-        <li class="my-px cursor-pointer">
+        <li class="my-px cursor-pointer" @click="handleGoToPage('/settings')">
           <a
-            class="flex flex-row items-center h-10 px-3 rounded-lg text-gray-300 hover:bg-gray-100 hover:text-gray-700"
+            class="flex flex-row items-center h-10 px-3 rounded-lg hover:bg-gray-100 hover:text-gray-700 hover:font-semibold"
+            :class="
+              $route.fullPath.includes('/settings')
+                ? 'bg-gray-100 font-semibold text-gray-700'
+                : 'text-gray-300'
+            "
           >
             <span class="material-symbols-outlined"> settings </span>
             <span class="ml-3">Settings</span>
           </a>
         </li>
-        <li class="my-px border-b-2"></li>
-        <li class="my-px cursor-pointer">
+        <li class="my-4 border-b-2"></li>
+        <li class="my-px cursor-pointer hover:font-semibold">
           <a
             class="flex flex-row items-center h-10 px-3 rounded-lg text-gray-300 hover:bg-gray-100 hover:text-gray-700"
           >
@@ -75,7 +90,11 @@ export default {
 
   mounted() {},
 
-  methods: {},
+  methods: {
+    handleGoToPage(page) {
+      this.$router.push(page);
+    },
+  },
 };
 </script>
 
