@@ -5,7 +5,7 @@
   -->
   <aside
     class="bg-blue-600 min-h-screen sticky top-0 z-40"
-    :class="isToggleSideBar ? 'w-fit' : 'w-64'"
+    :class="!isOpenSideBar ? 'w-fit' : 'w-64'"
   >
     <div class="w-full flex items-center justify-center py-6 cursor-pointer">
       <div @click="handleToggleSideBar">
@@ -34,13 +34,13 @@
             "
           >
             <span class="material-symbols-outlined"> home </span>
-            <span v-if="!isToggleSideBar" class="ml-3">Dashboard</span>
+            <span v-if="isOpenSideBar" class="ml-3">Dashboard</span>
           </a>
         </li>
 
         <li class="my-px">
           <span
-            v-if="!isToggleSideBar"
+            v-if="isOpenSideBar"
             class="flex font-medium text-sm text-white px-4 my-4 uppercase"
             >Account</span
           >
@@ -61,7 +61,7 @@
             "
           >
             <span class="material-symbols-outlined"> person </span>
-            <span v-if="!isToggleSideBar" class="ml-3">Profile</span>
+            <span v-if="isOpenSideBar" class="ml-3">Profile</span>
           </a>
         </li>
         <li class="my-px cursor-pointer" @click="handleGoToPage('/settings')">
@@ -74,7 +74,7 @@
             "
           >
             <span class="material-symbols-outlined"> settings </span>
-            <span v-if="!isToggleSideBar" class="ml-3">Settings</span>
+            <span v-if="isOpenSideBar" class="ml-3">Settings</span>
           </a>
         </li>
         <li class="my-4 border-b-2"></li>
@@ -83,7 +83,7 @@
             class="flex flex-row items-center h-10 px-3 rounded-lg text-gray-300 hover:bg-gray-100 hover:text-gray-700"
           >
             <span class="material-symbols-outlined"> logout </span>
-            <span v-if="!isToggleSideBar" class="ml-3">Logout</span>
+            <span v-if="isOpenSideBar" class="ml-3">Logout</span>
           </a>
         </li>
       </ul>
@@ -105,13 +105,13 @@ export default {
 
   computed: {
     ...mapFields("auth", {
-      isToggleSideBar: "isToggleSideBar",
+      isOpenSideBar: "isOpenSideBar",
     }),
   },
 
   methods: {
     handleToggleSideBar() {
-      this.isToggleSideBar = !this.isToggleSideBar;
+      this.isOpenSideBar = !this.isOpenSideBar;
     },
     handleGoToPage(page) {
       this.$router.push(page);

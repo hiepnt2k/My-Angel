@@ -4,7 +4,7 @@ const INIT_STATE = {
   email: "",
   password: "",
   loggedIn: false,
-  isToggleSideBar: false,
+  isOpenSideBar: false,
 };
 
 export const state = () => {
