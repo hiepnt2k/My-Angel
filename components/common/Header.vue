@@ -1,5 +1,5 @@
 <template>
-  <header class="header bg-white shadow py-4 px-4">
+  <header class="sticky top-0 z-40 header bg-white shadow py-4 px-4">
     <div class="header-content flex items-center flex-row">
       <form>
         <div class="hidden md:flex relative">

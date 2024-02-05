@@ -4,12 +4,10 @@
      md:shadow transform -translate-x-full md:translate-x-0 transition-transform duration-150 ease-in
   -->
   <aside
-    class="sidebar bg-blue-600"
+    class="bg-blue-600 min-h-screen sticky top-0 z-40"
     :class="isToggleSideBar ? 'w-fit' : 'w-64'"
   >
-    <div
-      class="w-full sidebar-header flex items-center justify-center py-6 cursor-pointer"
-    >
+    <div class="w-full flex items-center justify-center py-6 cursor-pointer">
       <div @click="handleToggleSideBar">
         <svg
           class="w-10 h-10 text-white"
@@ -24,7 +22,7 @@
         </svg>
       </div>
     </div>
-    <div class="w-full sidebar-content px-4">
+    <div class="w-full px-4">
       <ul class="flex flex-col w-full">
         <li class="my-px cursor-pointer" @click="handleGoToPage('/')">
           <a
